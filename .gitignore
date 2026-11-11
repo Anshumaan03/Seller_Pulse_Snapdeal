@@ -1,0 +1,27 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# local state
+data/*.db
+*.db
+*.sqlite3
+
+# recordings / screenshots made while testing
+*.mp4
+*.mov
+*.webm
+recordings/
+screenshots/
+
+# editor / OS
+.DS_Store
+.vscode/
+.idea/

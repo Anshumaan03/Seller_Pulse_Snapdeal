@@ -1,0 +1,77 @@
+{
+  "_label": "SYNTHETIC DEMO DATA - not Snapdeal seller data. Every seller name, SKU, benchmark, target and metric below is fabricated for this assessment prototype.",
+  "seller": {
+    "seller_id": "DEMO-1042",
+    "name": "Riya Home & Living (fictional)",
+    "category": "Home & Kitchen",
+    "region": "India (demo)"
+  },
+  "windows": {
+    "previous": {"label": "Previous 30 days", "days": 30},
+    "current": {"label": "Most recent 30 days", "days": 30}
+  },
+  "account": {
+    "previous": {"gmv": 310000, "orders": 500, "sessions": 12500},
+    "current":  {"gmv": 217000, "orders": 350, "sessions": 11250}
+  },
+  "targets": {
+    "_note": "Fabricated mock targets/baselines for the demo. Not Snapdeal standards.",
+    "late_dispatch_rate_pct": 6.0,
+    "cancellation_rate_pct": 2.0,
+    "category_return_rate_pct": 9.0
+  },
+  "skus": [
+    {
+      "sku_id": "DEMO-SKU-01",
+      "name": "Bamboo Home Organizer Set",
+      "orders_previous": 140,
+      "orders_current": 68,
+      "stockout_days_current": 9,
+      "stock_available": 0,
+      "selling_price": null,
+      "benchmark_price": null,
+      "return_rate_pct": null,
+      "late_dispatch_rate_pct": null,
+      "cancellation_rate_pct": null
+    },
+    {
+      "sku_id": "DEMO-SKU-02",
+      "name": "Cotton Bedsheet Set",
+      "orders_previous": 105,
+      "orders_current": 82,
+      "stockout_days_current": 0,
+      "stock_available": null,
+      "selling_price": 899,
+      "benchmark_price": 829,
+      "return_rate_pct": 16.0,
+      "late_dispatch_rate_pct": null,
+      "cancellation_rate_pct": null
+    },
+    {
+      "sku_id": "DEMO-SKU-03",
+      "name": "Kitchen Storage Jar Set",
+      "orders_previous": 90,
+      "orders_current": 80,
+      "stockout_days_current": 0,
+      "stock_available": null,
+      "selling_price": null,
+      "benchmark_price": null,
+      "return_rate_pct": null,
+      "late_dispatch_rate_pct": 18.0,
+      "cancellation_rate_pct": 7.0
+    },
+    {
+      "sku_id": "DEMO-SKU-04",
+      "name": "Other catalogue items",
+      "orders_previous": 165,
+      "orders_current": 120,
+      "stockout_days_current": null,
+      "stock_available": null,
+      "selling_price": null,
+      "benchmark_price": null,
+      "return_rate_pct": null,
+      "late_dispatch_rate_pct": null,
+      "cancellation_rate_pct": null
+    }
+  ]
+}

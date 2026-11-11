@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SellerPulse - Virtual KAM prototype</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>SellerPulse</h1>
+      <p class="sub">Virtual KAM prototype &middot; <span class="badge synth">Synthetic demo data</span>
+        <span class="muted">Independent assessment prototype, not an official Snapdeal product.</span></p>
+    </div>
+    <button id="resetBtn" class="ghost" type="button">Reset demo</button>
+  </header>
+
+  <main class="layout">
+    <section class="left">
+      <div class="card seller" aria-label="Seller account">
+        <div>
+          <div class="label">Seller</div>
+          <div class="seller-name" id="sellerName">Loading&hellip;</div>
+          <div class="muted small" id="sellerMeta"></div>
+        </div>
+        <div class="seller-actions">
+          <select id="sellerSelect" aria-label="Demo seller"><option value="DEMO-1042">DEMO-1042</option></select>
+          <button id="demoBtn" class="ghost" type="button">Try demo seller</button>
+        </div>
+      </div>
+
+      <div class="card call" aria-label="Voice call">
+        <div class="state-row">
+          <span id="stateDot" class="dot idle"></span>
+          <span id="stateText" class="state-text" role="status" aria-live="polite">Ready to call</span>
+        </div>
+        <p id="agentLine" class="agent-line">Press <b>Start call</b> and allow the microphone when Chrome asks.</p>
+        <p id="liveLine" class="live-line" aria-live="polite"></p>
+
+        <div class="controls">
+          <button id="startBtn" class="primary" type="button">Start call</button>
+          <button id="speakBtn" type="button" disabled title="Interrupt the agent and speak (Space)">Speak / interrupt</button>
+          <button id="micBtn" type="button" disabled aria-pressed="false">Mute mic</button>
+          <button id="spkBtn" type="button" disabled aria-pressed="false">Mute speaker</button>
+          <button id="endBtn" class="danger" type="button" disabled>End call</button>
+        </div>
+
+        <div id="notice" class="notice" hidden></div>
+
+        <details class="typed">
+          <summary>Type instead (debugging / accessibility)</summary>
+          <form id="typedForm">
+            <input id="typedInput" autocomplete="off" placeholder="Type what the seller would say" aria-label="Typed message">
+            <button type="submit">Send</button>
+          </form>
+        </details>
+      </div>
+
+      <div class="card tabs-card">
+        <div class="tabs" role="tablist">
+          <button role="tab" class="tab active" data-tab="plan" aria-selected="true">Action plan</button>
+          <button role="tab" class="tab" data-tab="transcript" aria-selected="false">Transcript</button>
+          <button role="tab" class="tab" data-tab="hood" aria-selected="false">Under the hood</button>
+        </div>
+
+        <div id="tab-plan" class="tabpane">
+          <div class="banner">Simulated drafts only. Nothing here is applied to a live Snapdeal account.</div>
+          <div id="planBody"><p class="muted">No plan yet. It appears here once the agent proposes one, and is saved only after the seller says yes.</p></div>
+        </div>
+        <div id="tab-transcript" class="tabpane" hidden>
+          <div id="transcript" class="transcript"><p class="muted">The transcript is a supporting aid. It fills in as you talk.</p></div>
+        </div>
+        <div id="tab-hood" class="tabpane" hidden>
+          <p class="muted small">For reviewers. The agent only states numbers returned by these backend tools.</p>
+          <div id="toolLog" class="toollog"></div>
+          <div class="label">Facts remembered this call</div>
+          <pre id="factsBox" class="facts">{}</pre>
+          <div class="label">Modes</div>
+          <pre id="modeBox" class="facts"></pre>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right">
+      <div class="card">
+        <div class="label">Sales snapshot <span class="badge synth">Synthetic</span></div>
+        <div class="muted small" id="windowNote"></div>
+        <table class="snap" id="snapTable"><tbody></tbody></table>
+        <p class="muted small" id="reconNote"></p>
+      </div>
+
+      <div class="card">
+        <div class="label">What the data points to</div>
+        <p class="muted small">Observed = straight from the data. Hypothesis = a lead to check, not proof of cause.</p>
+        <div id="signals"></div>
+        <p class="muted small" id="targetsNote"></p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="foot muted small">
+    Voice mode: browser speech recognition + speech synthesis (Chrome or Edge on localhost). All seller data is fabricated for this demo.
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
